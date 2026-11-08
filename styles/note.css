@@ -1,0 +1,61 @@
+.note {
+  /* border: solid 1px white; */
+  position: absolute;
+  border-radius: 15px;
+  width: 130px;
+  height: 180px;
+  /* background-color: #FFC300; */
+  background-color: #FFE100;
+}
+
+.bodyNote {
+  color: black;
+  padding-left: 10px;
+}
+
+.noteHeader {
+  text-align: center;
+  /* border-bottom: solid 1px white; */
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 1px;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: space-between; */
+  background-color: #FFA100;
+  /* padding-left: 10px; */
+}
+
+.noteHeader>h3 {
+  margin: 5px;
+  text-align: center;
+}
+
+.closeNote {
+  width: 20px;
+  height: 34px;
+  margin: 0px;
+  background-color: #472D00;
+  border-radius: 30px;
+  margin-right: 3px;
+  margin-top: 2px;
+  transition: 0.17s ease-in-out;
+}
+
+@keyframes myAnimation {
+  from {
+    background-color: #472D00;
+  }
+
+  to {
+    background-color: #CF0800;
+  }
+}
+
+.closeNote:hover {
+  background-color: #CF0800;
+  cursor: pointer;
+  /* animation-name: myAnimation; */
+  /* animation-duration: 0.3s; */
+}

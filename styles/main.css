@@ -1,0 +1,14 @@
+@import url("./note.css");
+@import url("./addButon.css");
+@import url("./editGUI.css");
+
+:root {
+  --bgColor: #00051a;
+}
+
+body {
+  background-color: var(--bgColor);
+  overflow: hidden;
+  touch-action: none;
+  color: white;
+}

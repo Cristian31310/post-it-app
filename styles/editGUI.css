@@ -1,0 +1,83 @@
+.editGUI {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: blue;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  display: none;
+  gasp: 20px;
+  z-index: 100;
+}
+
+.editTitle {
+  width: 100%;
+}
+.editTitle input {
+  width: 70%;
+  height: 25px;
+  border: none;
+  border-radius: 15px;
+}
+
+.editTitle > input[type="text"]:focus {
+  outline: none;
+}
+.editTextarea > textarea:focus {
+  outline: none;
+}
+.editTextarea {
+  width: 100%;
+  height: 30%;
+  margin-bottom: 20px;
+}
+.editTextarea > input[type="text"]:focus {
+  outline: none;
+}
+.editTextarea > textarea {
+  width: 70%;
+  height: 100%;
+  border: none;
+  border-radius: 15px;
+}
+.editButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 70%;
+}
+
+.editButtons > button {
+  height: 40px;
+  width: 40px;
+  border-radius: 45px;
+  border: none;
+}
+
+.colorGUISelector {
+  width: 40%;
+  height: 25px;
+
+  background-color: #e8e6e6;
+  position: relative;
+  /* left: 140px; */
+
+  border-radius: 30px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.colorGUISelector > div {
+  height: 13px;
+  width: 13px;
+  border-radius: 4px;
+}
