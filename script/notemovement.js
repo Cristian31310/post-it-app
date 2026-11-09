@@ -25,8 +25,11 @@ function noteMovement(note) {
 
   note.addEventListener("touchend", (e) => {
     isTouch = false;
-    if (target.className == "note")
-      updateNote({ id: note.id, position: [note.style.left, note.style.top] });
+    if (note.className == "note")
+      updateNote({
+        id: note.id,
+        position: [note.style.left, note.style.top],
+      });
   });
 
   window.addEventListener("touchmove", (e) => {
