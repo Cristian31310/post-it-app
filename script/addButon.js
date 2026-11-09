@@ -78,6 +78,10 @@ function createNoteGUI(e) {
     });
 
     div.style.backgroundColor = divColor;
+    // let left = div.style.left.slice(0, -2);
+    // let top = div.style.top.slice(0, -2);
+    // div.style.left = left - div.offsetLeft + "px";
+    // div.style.top = div.style.top - div.offsetTop + "px";
     inputTitle.style.backgroundColor = divColor;
     bodyText.style.backgroundColor = divColor;
 
@@ -143,14 +147,14 @@ function changeNoteColor(color) {
 // de tal manera que parezca que el menu y la nueva nota sean iguales
 function comfirmCreateNewNote(div) {
   // TODO:
-
+  console.log(calculateWindowCenter(div));
   let id = Date.now();
   let objNote = {
     id: id,
     name: inputTitleText,
     content: inputBodyText,
     color: divColor,
-    position: [div.style.left, div.style.top],
+    position: calculateWindowCenter(div),
   };
 
   note(objNote);

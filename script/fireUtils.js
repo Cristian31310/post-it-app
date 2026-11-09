@@ -4,6 +4,7 @@ import {
   addDoc,
   updateDoc,
   doc,
+  deleteDoc,
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 async function postNote(note) {
@@ -43,4 +44,12 @@ async function getNoteId(note) {
   return arrNoteId[0].id;
 }
 
-export { postNote, getNotes, updateNote };
+async function deleteNota(note) {
+  try {
+    await deleteDoc(doc(db, "notes", await getNoteId(note)), note);
+  } catch (error) {
+    console.error("ERROR DEL FIREBISE " + error);
+  }
+}
+
+export { postNote, getNotes, updateNote, deleteNota };
