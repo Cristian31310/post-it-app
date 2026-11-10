@@ -8,15 +8,16 @@
   background-color: #ffa100;
 
   display: flex;
+  flex-direction: row;
   align-items: center;
 
   cursor: pointer;
 }
 
 .addButon > p {
-  position: absolute;
-  left: 22%;
-  top: -115%;
+  position: relative;
+  left: 10.1%;
+  top: -1.2%;
 }
 
 .addButonHeader {
