@@ -23,6 +23,7 @@ const note = (note) => {
   let header = document.createElement("div");
   let body = document.createElement("div");
   let bodyText = document.createElement("p");
+  let notesView = document.getElementById("notes");
 
   h3.innerText = name;
   bodyText.innerText = content;
@@ -37,8 +38,7 @@ const note = (note) => {
   div.appendChild(header);
   div.appendChild(body);
 
-  document.body.appendChild(div);
-
+  notesView.appendChild(div);
   if (!color) div.style.backgroundColor = "#FFE100";
 
   div.style.backgroundColor = color;

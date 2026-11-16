@@ -1,15 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <script defer type="module" src="./script/main.js"></script>
+    <title>Notes</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles/main.css">
-  <script defer type="module" src="./script/main.js"></script>
-  <title>Notes</title>
-</head>
-
-<body>
-</body>
-
+  <body>
+    <div id="notes"></div>
+    <div class="login" id="login">
+      <div class="logInHeader">
+        <h1>Log In</h1>
+      </div>
+      <div class="loginContainer">
+        <div class="loginGoogle" id="loginGoogle">
+          <button id="logInButton">Log With Google</button>
+        </div>
+        <div class="loginEmail">
+          <div class="logInputs">
+            <input type="text" name="email" id="inEmail" placeholder="Email" />
+            <input
+              type="text"
+              name="password"
+              id="inPassword"
+              placeholder="Password"
+            />
+          </div>
+          <button id="loginEmailBut">Log in</button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

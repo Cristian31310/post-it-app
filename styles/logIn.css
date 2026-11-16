@@ -1,0 +1,63 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0px;
+}
+
+.logInHeader {
+  background-color: #fa991b;
+  height: 12vh;
+  margin: 0px;
+  width: 100vw;
+}
+
+.loginContainer {
+  background-color: #00051a;
+  height: 85vh;
+  margin-top: 0px;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginGoogle {
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginGoogle > button {
+  width: 70vw;
+  height: 10vw;
+  border-radius: 30px;
+  border: none;
+}
+
+.loginEmail {
+  border-top: solid 1px white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 50vh;
+}
+
+.logInputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 20vh;
+}
+
+.logInputs > input {
+  width: 70vw;
+  height: 13vw;
+  border-radius: 30px;
+}
+
+.logInputs > input::placeholder {
+  text-align: center;
+}

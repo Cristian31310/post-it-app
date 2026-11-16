@@ -15,6 +15,7 @@ let inputBodyText = "";
 const addButon = () => {
   let div = document.createElement("div");
   let p = document.createElement("p");
+  let notesView = document.getElementById("notes");
 
   div.setAttribute("class", "addButon");
   div.addEventListener("touchend", (e) => createNoteGUI(e));
@@ -22,7 +23,7 @@ const addButon = () => {
 
   div.appendChild(p);
   p.setAttribute("id", "add");
-  document.body.appendChild(div);
+  notesView.appendChild(div);
 
   calculateWindowCenter(div);
   noteMovement(div);
