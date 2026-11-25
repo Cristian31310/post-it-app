@@ -15,6 +15,7 @@ const note = (note) => {
   let content = note.content;
   let color = note.color;
   let position = note.position;
+  let email = note.email;
 
   let x = 0;
   let y = 1;

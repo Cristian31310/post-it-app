@@ -10,6 +10,7 @@ import {
 async function postNote(note) {
   try {
     const docRef = await addDoc(notesCollection, note);
+    console.log(note);
   } catch (error) {
     console.error("ERROR DEL FIREBISE" + error);
   }

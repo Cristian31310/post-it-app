@@ -1,13 +1,16 @@
 import {
   getAuth,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
+  onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+import addCreatedNotes from "./addCreatedNotes.js";
 
 const auth = getAuth();
+let emailUser = "";
 const provider = new GoogleAuthProvider();
-
 function logWithGoogle() {
   signInWithPopup(auth, provider)
     .then((result) => {
@@ -16,9 +19,12 @@ function logWithGoogle() {
       const token = credential.accessToken;
       // The signed-in user info.
       const user = result.user;
-      console.log(user);
       document.getElementById("login").style.display = "none";
       document.getElementById("notes").style.display = "block";
+      emailUser = user.email;
+      console.log("User email:", emailUser);
+      addCreatedNotes(emailUser);
+      return user;
     })
     .catch((error) => {
       // Handle Errors here.
@@ -33,6 +39,9 @@ function logWithGoogle() {
     });
 }
 
+function getEmail() {
+  return emailUser;
+}
 function logWithEmail(emailUser, passwordUser) {
   console.log("email", emailUser.value);
   const email = emailUser.value;
@@ -44,6 +53,8 @@ function logWithEmail(emailUser, passwordUser) {
       const user = userCredential.user;
       document.getElementById("login").style.display = "none";
       document.getElementById("notes").style.display = "block";
+      emailUser = user.email;
+      addCreatedNotes(emailUser);
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -52,4 +63,20 @@ function logWithEmail(emailUser, passwordUser) {
     });
 }
 
-export { logWithGoogle, logWithEmail };
+function signInWithEmail(email, password) {
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      console.log("userCredential ", userCredential);
+      const user = userCredential.user;
+      document.getElementById("login").style.display = "none";
+      document.getElementById("notes").style.display = "block";
+      emailUser = user.email;
+      addCreatedNotes(emailUser);
+      console.log("Sesión iniciada:", user.email);
+    })
+    .catch((error) => {
+      console.error("Error:", error.code, error.message);
+    });
+}
+
+export { logWithGoogle, logWithEmail, getEmail, signInWithEmail };

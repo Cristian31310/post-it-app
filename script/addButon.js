@@ -7,6 +7,7 @@ import {
 import { note } from "./note.js";
 
 import { postNote } from "./fireUtils.js";
+import { getEmail } from "./firebaseAuth.js";
 
 let divColor = "white";
 let inputTitleText = "";
@@ -150,12 +151,14 @@ function comfirmCreateNewNote(div) {
   // TODO:
   console.log(calculateWindowCenter(div));
   let id = Date.now();
+  console.log(getEmail());
   let objNote = {
     id: id,
     name: inputTitleText,
     content: inputBodyText,
     color: divColor,
     position: calculateWindowCenter(div),
+    email: getEmail(),
   };
 
   note(objNote);

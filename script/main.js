@@ -6,5 +6,4 @@ import { logIn } from "./logIn.js";
 
 logIn();
 createEditGUI();
-addCreatedNotes();
 addButon();
