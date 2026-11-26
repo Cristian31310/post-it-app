@@ -22,7 +22,6 @@ function logWithGoogle() {
       document.getElementById("login").style.display = "none";
       document.getElementById("notes").style.display = "block";
       emailUser = user.email;
-      console.log("User email:", emailUser);
       addCreatedNotes(emailUser);
       return user;
     })
@@ -43,11 +42,9 @@ function getEmail() {
   return emailUser;
 }
 function logWithEmail(emailUser, passwordUser) {
-  console.log("email", emailUser.value);
   const email = emailUser.value;
   const password = passwordUser.value;
 
-  console.log(email, password);
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
@@ -66,13 +63,11 @@ function logWithEmail(emailUser, passwordUser) {
 function signInWithEmail(email, password) {
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      console.log("userCredential ", userCredential);
       const user = userCredential.user;
       document.getElementById("login").style.display = "none";
       document.getElementById("notes").style.display = "block";
       emailUser = user.email;
       addCreatedNotes(emailUser);
-      console.log("Sesión iniciada:", user.email);
     })
     .catch((error) => {
       console.error("Error:", error.code, error.message);

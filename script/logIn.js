@@ -11,7 +11,7 @@ function logIn() {
   const inputPass = document.getElementById("inPassword");
 
   button.addEventListener("click", () => {
-    console.log("owo", logWithGoogle());
+    logWithGoogle();
   });
 
   buttonEmail.addEventListener("click", () => {

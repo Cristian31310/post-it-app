@@ -1,16 +1,10 @@
 // TODO:
-// Añadir funcionalidad al boton de cerrar
-// Cambiar fuente de texto
-// Añadir funcionalidad al lugar donde se añade el contenido de la nota
-// Cambiar el esquema de color de la nota dependiendo del c=olor que seleccione el usuario
 // Cambiar la nota por una clase
-// Generar id de forma dinamica cada vez que se cree una nota
 
 import { noteMovement, doubleTap } from "./notemovement.js";
 
 // const note = (id, name, content, color, position) => {
-const note = (note) => {
-  let id = note.id;
+const note = (note, id) => {
   let name = note.name;
   let content = note.content;
   let color = note.color;

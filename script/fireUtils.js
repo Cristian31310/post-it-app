@@ -10,7 +10,6 @@ import {
 async function postNote(note) {
   try {
     const docRef = await addDoc(notesCollection, note);
-    console.log(note);
   } catch (error) {
     console.error("ERROR DEL FIREBISE" + error);
   }
@@ -31,23 +30,15 @@ async function getNotes() {
 
 async function updateNote(note) {
   try {
-    await updateDoc(doc(db, "notes", await getNoteId(note)), note);
+    await updateDoc(doc(db, "notes", note.id), note);
   } catch (error) {
     console.error("ERROR DEL FIREBISE " + error);
   }
 }
 
-async function getNoteId(note) {
-  const notes = await getNotes();
-  const arrNoteId = notes.filter((n) => {
-    if (n.data().id == note.id) return n.data().id;
-  });
-  return arrNoteId[0].id;
-}
-
 async function deleteNota(note) {
   try {
-    await deleteDoc(doc(db, "notes", await getNoteId(note)), note);
+    await deleteDoc(doc(db, "notes", note.id), note);
   } catch (error) {
     console.error("ERROR DEL FIREBISE " + error);
   }

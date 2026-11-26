@@ -32,7 +32,6 @@ const addButon = () => {
 
 function createNoteGUI(e) {
   if (!haveBeenMove) {
-    // centrar la posicion con un offset
     let header = document.createElement("div");
     let inputTitle = document.createElement("input");
     let bodyText = document.createElement("textarea");
@@ -144,14 +143,9 @@ function changeNoteColor(color) {
   divColor = color;
 }
 
-// En casa terminar estas dos funciones
-// Crea una nueva nota en el documento y lo añade a firebase
-// de tal manera que parezca que el menu y la nueva nota sean iguales
 function comfirmCreateNewNote(div) {
   // TODO:
-  console.log(calculateWindowCenter(div));
   let id = Date.now();
-  console.log(getEmail());
   let objNote = {
     id: id,
     name: inputTitleText,
